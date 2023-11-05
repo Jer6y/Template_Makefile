@@ -21,6 +21,13 @@ ifneq ($(findstring /,$(cur_objs)), )
 $(error "you should only use the file of pwd")
 endif
 
+dep_files:=$(patsubst %,.%.d,$(cur_objs))
+dep_files:=$(wildcard $(dep_files))
+
+ifneq ($(dep_files), )
+include $(dep_files)
+endif
+
 sub_dirobjs:=$(foreach it,$(sub_dirs),$(it)/build.o)
 
 build.o:$(sub_dirobjs) $(cur_objs)
