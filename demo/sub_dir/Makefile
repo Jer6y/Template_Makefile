@@ -1,4 +1,3 @@
-
 OBJECTS+= t1.o
 OBJECTS+= t2.o
 OBJECTS+= sub/
