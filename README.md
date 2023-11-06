@@ -10,16 +10,16 @@
 |	|-- Makefile                 //[顶层Makefile] 【需要用户使用时修改】
 |	|-- main.c                   //源C文件-1
 |	|-- test.c                   //源C文件-2
-|   |-- add_dir                  //包含源C文件的目录
+|	|-- add_dir                  //包含源C文件的目录
 |		|-- Makefile             //[子目录Makefile] 【需要用户使用时创建并添加内容】
 |		|-- t4.c                 //源C文件-3
-|   |-- include                  //头文件
+|	|-- include                  //头文件
 |		|-- t1.h
 |		|-- t2.h
 |		|-- t3.h
 |		|-- t4.h
 |		|-- test.h
-|   |-- sub_dir                 //包含源C文件的目录
+|	|-- sub_dir                 //包含源C文件的目录
 |		|-- Makefile            //[子目录Makefile] 【需要用户使用时创建并添加内容】
 |		|-- t1.c                //源C文件-3
 |		|-- t2.c                //源C文件-4
@@ -28,8 +28,8 @@
 |			|-- t3.c            //源C文件-5
 |
 |-- src                         //[通用Makefile源代码]
-    |-- Makefile.build          //[顶层Makefile.build]   【不需要用户修改】		
-    |-- Makefile                //[顶层Makefile]         【需要用户使用时修改】
+	|-- Makefile.build          //[顶层Makefile.build]   【不需要用户修改】		
+	|-- Makefile                //[顶层Makefile]         【需要用户使用时修改】
 ```
 
 ### 简介
