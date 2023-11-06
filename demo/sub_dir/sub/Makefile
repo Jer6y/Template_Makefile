@@ -1,0 +1,2 @@
+
+OBJECTS+=t3.o

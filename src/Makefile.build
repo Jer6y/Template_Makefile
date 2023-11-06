@@ -1,0 +1,40 @@
+OBJECTS:=
+CCFLAG_EXTRA:=
+
+
+
+PHONY:=target
+target:build.o
+
+include Makefile
+
+cur_objs:=$(filter-out %/,$(OBJECTS))
+
+sub_dirs:=$(filter %/,$(OBJECTS))
+sub_dirs:=$(patsubst %/,%,$(sub_dirs))
+
+ifneq ($(findstring /,$(sub_dirs)), )
+$(error "you should only include the dir which is your direct child")
+endif
+
+ifneq ($(findstring /,$(cur_objs)), )
+$(error "you should only use the file of pwd")
+endif
+
+dep_files:=$(patsubst %,.%.d,$(cur_objs))
+dep_files:=$(wildcard $(dep_files))
+
+ifneq ($(dep_files), )
+include $(dep_files)
+endif
+
+sub_dirobjs:=$(foreach it,$(sub_dirs),$(it)/build.o)
+
+build.o:$(sub_dirobjs) $(cur_objs)
+	$(LD) -r $^ -o $@
+$(sub_dirobjs):
+	make -C $(dir $@) -f $(TOPDIR)/Makefile.build    
+%.o:%.c
+	$(CC) $(CCFLAGS) $(CCFLAG_EXTRA) $(CCFLAG_$(patsubst %.o,%,$@)) -c $< -o $@ -MD -MF .$@.d
+
+.PHONY:=$(PHONY)

@@ -1,0 +1,4 @@
+
+OBJECTS += t4.o
+
+CCFLAG_EXTRA += -D t4
