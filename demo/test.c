@@ -3,6 +3,6 @@
 
 void print_test()
 {
-    printf("Hello, this is test!\n",MACRO_TEST);
+    printf("Hello, this is test: %d!\n",MACRO_TEST);
     return;
 }

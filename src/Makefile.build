@@ -38,7 +38,7 @@ target:$(sub_dirs) build.o
 $(sub_dirs):
 	make -C $@ -f $(TOPDIR)/Makefile.build    
 
-build.o:$(sub_dirs) $(cur_objs) $(sub_dirobjs)
+build.o:$(cur_objs) $(sub_dirobjs)
 	$(LD) -r $(cur_objs) $(sub_dirobjs) -o $@
 
 %.o:%.c 
