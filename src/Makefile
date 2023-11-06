@@ -10,7 +10,7 @@ OBJCOPY			:= $(CROSS_COMPILE)objcopy
 
 
 CCFLAGS			:= -g 
-CCFLAGS 		+= -I./include
+CCFLAGS 		+= -I$(shell pwd)/include
 
 LDFLAGS			:= 
 
@@ -20,7 +20,9 @@ export CC LD AS AR CCFLAGS LDFLAGS TOPDIR
 
 TARGET			:= main
 
-OBJECTS			+= a.o b.o c.o sub/
+OBJECTS			+= main.o test.o add_dir/ sub_dir/
+
+CCFLAGS			+= -D test
 
 compile:begin_recur $(TARGET)
 	@echo $(TARGET) has been built
