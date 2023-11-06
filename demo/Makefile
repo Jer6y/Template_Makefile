@@ -10,7 +10,7 @@ OBJCOPY			:= $(CROSS_COMPILE)objcopy
 
 
 CCFLAGS			:= -g 
-CCFLAGS 		+= -I./include
+CCFLAGS 		+= -I$(shell pwd)/include
 
 LDFLAGS			:= 
 
