@@ -23,9 +23,9 @@
 |		|-- Makefile            //[子目录Makefile] 【需要用户使用时创建并添加内容】
 |		|-- t1.c                //源C文件-3
 |		|-- t2.c                //源C文件-4
-|   	|-- sub                 //包含源C文件的目录
-|			|-- Makefile        //[子目录Makefile] 【需要用户使用时创建并添加内容】
-|			|-- t3.c            //源C文件-5
+|	|-- sub                     //包含源C文件的目录
+|		|-- Makefile            //[子目录Makefile] 【需要用户使用时创建并添加内容】
+|		|-- t3.c                //源C文件-5
 |
 |-- src                         //[通用Makefile源代码]
 	|-- Makefile.build          //[顶层Makefile.build]   【不需要用户修改】		
